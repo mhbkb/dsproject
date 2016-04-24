@@ -1,0 +1,6 @@
+.idea/
+.git/
+
+*.zip
+
+.DS_Store
