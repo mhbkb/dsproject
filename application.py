@@ -52,7 +52,7 @@ def hello():
 # TODO: check param, Call db
 @application.route("/String/<param>", methods=['POST'])
 def write(param):
-    strs = param.split(' ')
+    strs = param.split()
     count = 0
     word_map = {}
     for s in strs:
@@ -74,7 +74,7 @@ def write(param):
 # TODO: check param, Call db
 @application.route("/Counts/<words>", methods=['GET'])
 def read(words):
-    wordsArray = words.split(',')
+    wordsArray = filter(lambda x: x != '', words.split(','))
     # Call db api
     query = []
     count = 0
